@@ -274,8 +274,8 @@ const cancelSubscriptionPlan = async (request, response) => {
 };
 
 module.exports = {
+	getPaymentInfo,
 	getPaymentSession,
 	handleWebhook,
-	getPaymentInfo,
 	cancelSubscriptionPlan,
 };

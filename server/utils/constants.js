@@ -1,8 +1,24 @@
-// limit each IP to 1000 requests per windowMs (15 minutes)
-global.EXPRESS_RATE_LIMIT = { windowMs: 15 * 60 * 1000, max: 1000 };
+global.EXPRESS_RATE_LIMIT = {
+	windowMs: 15 * 60 * 1000, // 15 minutes
+	max: 1000, // limit each IP to 1000 requests per windowMs
+};
 
-// Set login token expiry for 7 Days and RS256 bit encryption
-global.LOGIN_TOKEN_PREFERENCES = { expiresIn: "7d", algorithm: "RS256" };
+global.LOGIN_TOKEN_PREFERENCES = {
+	expiresIn: "7d",
+	algorithm: "RS256",
+};
+
+global.IMAGE_SIZES_TO_UPLOAD = { xs: 150, s: 300, m: 800, l: 1280, xl: 1920, xxl: 2560 };
+global.FILE_UPLOAD_SCHEMA = {
+	xs: String,
+	s: String,
+	m: String,
+	l: String,
+	xl: String,
+	xxl: String,
+	original: String,
+	mimetype: String,
+};
 
 global.HTTP_STATUS_CODES = {
 	OK: 200,
@@ -27,10 +43,16 @@ global.STRIPE_EVENTS = {
 };
 
 global.USER_FIELDS_UPDATE_BY_ADMIN_ONLY = [
+	"reviews",
+	"subscription.paymentID",
+	"subscription.activationDate",
+	"subscription.expiryDate",
+	"subscription.paymentType",
+	"subscription.paymentStatus",
+	"subscription.isActive",
 	"passwordReset",
-	// "userRole",
+	"userRole",
 	"isActive",
-	"isFeatured",
 	"createdBy",
 	"updatedBy",
 ];
