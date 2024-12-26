@@ -24,7 +24,7 @@ const userSchema = mongoose.Schema(
 				paymentStatus: { type: String, default: "unpaid" },
 				isActive: { type: Boolean, default: false },
 				isActiveByAdmin: { type: Boolean, default: false },
-				cancelation: { status: { type: Boolean, default: false }, date: Date, reason: String },
+				cancellation: { status: { type: Boolean, default: false }, date: Date, reason: String },
 			},
 		],
 		passwordReset: {
