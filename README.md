@@ -1,6 +1,6 @@
-# surplusList
+# Mern Project Guide
 
-Welcome to surplusList! This repository contains a Vite-based web application with separate backend, admin and website interfaces.
+Welcome to project! This repository contains a Vite-based web application with separate backend, admin and website interfaces.
 
 ## Table of Contents
 
