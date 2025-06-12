@@ -2,13 +2,10 @@
 
 - [Introduction](#introduction)
 - [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Development](#development)
-- [Naming Conventions](#naming-conventions)
 - [Folder & File Organization](#folder--file-organization)
-- [Code Quality Tips](#code-quality-tips)
 - [Ignored Folders](#ignored-folders)
-- [License](#license)
+- [Naming Conventions](#naming-conventions)
+- [Code Quality Tips](#code-quality-tips)
 
 ---
 
@@ -25,110 +22,6 @@ This project leverages the MERN stack (MongoDB, Express.js, React.js, Node.js) a
 /website   → Public-facing website (React + Vite)
 /server    → Backend API (Node.js + Express)
 /shared    → Common utilities and types shared across the app
-````
-
----
-
-## 🛠️ Installation
-
-Follow these steps to set up the project locally:
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-```
-
-### 2. Install Dependencies
-
-Navigate into each workspace and install dependencies:
-
-```bash
-# Admin Panel
-cd admin
-npm install
-
-# Website
-cd ../website
-npm install
-
-# Server
-cd ../server
-npm install
-```
-
-### 3. Set Up Environment Variables
-
-Copy the `.env.example` files and configure as needed:
-
-```bash
-cp admin/.env.example admin/.env
-cp website/.env.example website/.env
-cp server/.env.example server/.env
-```
-
-> 🔒 Don't forget to add your keys and environment-specific values in each `.env` file.
-
-### 4. Run the Application
-
-In separate terminal windows or tabs:
-
-```bash
-# Admin
-cd admin
-npm run dev
-
-# Website
-cd ../website
-npm run dev
-
-# Server
-cd ../server
-npm run dev
-```
-
----
-
-## 🚧 Development
-
-To run the development servers:
-
-```bash
-# Admin
-cd admin && npm run dev
-
-# Website
-cd website && npm run dev
-
-# Server
-cd server && npm run dev
-```
-
----
-
-## 📌 Naming Conventions
-
-### Variables & Functions
-
-* Use **camelCase** or **snake\_case**
-* Use meaningful names; avoid single letters
-* Functions should be named with **verb + noun**, e.g., `handleFormSubmit`
-
-```js
-// Good
-let userName = "JohnDoe";
-function calculateTotal(price, qty) {
-  return price * qty;
-}
-```
-
-### Constants
-
-* Use **SCREAMING\_SNAKE\_CASE**
-
-```js
-const MAX_RETRY_COUNT = 5;
 ```
 
 ---
@@ -197,6 +90,31 @@ Here’s a condensed view of the directory layout:
 
 📁 shared
  └─ Common types/utilities
+```
+---
+
+## 📌 Naming Conventions
+
+### Variables & Functions
+
+* Use **camelCase** or **snake\_case**
+* Use meaningful names; avoid single letters
+* Functions should be named with **verb + noun**, e.g., `handleFormSubmit`
+
+```js
+// Good
+let userName = "JohnDoe";
+function calculateTotal(price, qty) {
+  return price * qty;
+}
+```
+
+### Constants
+
+* Use **SCREAMING\_SNAKE\_CASE**
+
+```js
+const MAX_RETRY_COUNT = 5;
 ```
 
 ---
