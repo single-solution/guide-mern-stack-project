@@ -195,7 +195,7 @@ For example, if a word is underlined in blue by the code spell checker indicatin
 ### Abstraction
 - Abstract away unnecessary details to simplify code.
 - Use higher-level abstractions when dealing with complex operations.
-- Create minimum number of files do not create cluster chunks
+- Create a minimum number of files, do not create cluster chunks
 
 ### Code Reuse
 - Identify common patterns and extract them into reusable functions or components.
@@ -216,18 +216,18 @@ For example, if a word is underlined in blue by the code spell checker indicatin
 ## Example Folder Structure For A Full Stack App
 
 - **admin**: Contains the front-end code using React.js.
-  - **public**: Stores static assets and libraries to use local CDN.
+  - **public**: Stores static assets and libraries to use the local CDN.
   - **src**: Contains React components, pages, and other front-end code.
 - **website**: Contains the front-end code using React.js.
-  - **public**: Stores static assets and libraries to use local CDN.
+  - **public**: Stores static assets and libraries to use the local CDN.
   - **src**: Contains React components, pages, and other front-end code.
 - **server**: Contains the back-end code using Node.js and Express.js.
   - **assets**: Holds assets and other encryption files.
-  - **controllers**: Contains controller functions`.
+  - **controllers**: Contains controller functions.
   - **models**: Defines data models.
   - **routes**: Defines API routes.
 - **.gitignore**: Specifies files and directories to be ignored by Git.
-- **README.md**: Detail explanation about project setup, configs and use.
+- **README.md**: Detailed explanation about project setup, configs, and use.
 
 This README outlines the structure of a typical MERN (MongoDB, Express.js, React.js, Node.js) stack application.
 ```
@@ -416,38 +416,19 @@ This README outlines the structure of a typical MERN (MongoDB, Express.js, React
 - 📄 README.md
 ```
 
-This structure is a common setup for MERN stack applications, but it can be customized based on the specific requirements of your project. Can be modified as needed!
+This structure is a common setup for MERN stack applications, but it can be customised based on the specific requirements of your project. Can be modified as needed!
 
 # Commit Message Format
 
 *This specification is inspired by and supersedes the [AngularJS commit message format][commit-message-format].*
-
-Each commit message consists of a **header**, a **body**, and a **footer**.
-
-
-```
-<header>
-<BLANK LINE>
-<body>
-<BLANK LINE>
-<footer>
-```
-
-The `header` is mandatory and must conform to the [Commit Message Header](#commit-header) format.
-
-The `body` is mandatory for all commits except for those of type "docs".
-When the body is present it must be at least 20 characters long and must conform to the [Commit Message Body](#commit-body) format.
-
-The `footer` is optional. The [Commit Message Footer](#commit-footer) format describes what the footer is used for and the structure it must have.
-
 
 #### <a name="commit-header"></a>Commit Message Header
 
 ```
 <type>: <short summary> 
   │       │
-  │       └─⫸ Commit Summary: use of non-continous verbs, with clear sentences.  
-  │                            build: hanges that affect the build system (example: npm updates)
+  │       └─⫸ Commit Summary: use of non-continuous verbs, with clear sentences.  
+  │                            build: changes that affect the build system (example: npm updates)
   │                            ci: Changes to our configuration files and scripts 
   │                            docs: Documentation only changes
   │                            feat: A new feature
@@ -459,29 +440,7 @@ The `footer` is optional. The [Commit Message Footer](#commit-footer) format des
   └─⫸ Commit Type: build|ci|docs|feat|fix|perf|refactor|test
 ```
 
-
-##### Summary
-
-Use the summary field to provide a succinct description of the change:
-
-* use the imperative, present tense: "change" not "changed" nor "changes"
-* don't capitalize the first letter
-* no dot (.) at the end
-
-
-#### <a name="commit-body"></a>Commit Message Body
-
-Just as in the summary, use the imperative, present tense: "fix" not "fixed" nor "fixes".
-
-
-### Revert commits
-
-If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit.
-
-The content of the commit message body should contain:
-- Information about the SHA of the commit being reverted in the following format: `This reverts commit <SHA>`,
-- A clear description of the reason for reverting the commit message.
-
+Just as in the summary, use the imperative, present tense: "fix", not "fixed" nor "fixes".
 
 
 # Required VSCode Plugins
