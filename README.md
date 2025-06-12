@@ -479,9 +479,8 @@ Just as in the summary, use the imperative, present tense: "fix" not "fixed" nor
 If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit.
 
 The content of the commit message body should contain:
-
-- information about the SHA of the commit being reverted in the following format: `This reverts commit <SHA>`,
-- a clear description of the reason for reverting the commit message.
+- Information about the SHA of the commit being reverted in the following format: `This reverts commit <SHA>`,
+- A clear description of the reason for reverting the commit message.
 
 
 
@@ -490,45 +489,18 @@ The content of the commit message body should contain:
 ### Required VSCode Plugins
 Ensure a smoother development workflow with these essential VSCode plugins:
 
-1. **Auto Rename Tag**: Automatically rename paired HTML/XML tags.
-   - [Download Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
-
-2. **Better Align**: Align code with ease using configurable alignment rules.
-   - [Download Better Align](https://marketplace.visualstudio.com/items?itemName=wwm.better-align)
-
-3. **Bootstrap Intellisense**: Bootstrap 3 and 4 autocomplete, snippets, and intellisense in VSCode.
-   - [Download Bootstrap Intellisense](https://marketplace.visualstudio.com/items?itemName=thekalinga.bootstrap4-vscode)
-
-4. **Code Spell Checker**: Spell checker for source code.
-   - [Download Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
-
-5. **ES7+ React/Redux/GraphQL/React-Native snippets**: JavaScript and React/Redux snippets in ES7+ syntax.
-   - [Download ES7+ React/Redux snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
-
-6. **ESLint**: Provides linting for JavaScript and TypeScript code.
-   - [Download ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-
-7. **HTML Tag Wrapper**: Wrap selections with HTML tags.
-   - [Download HTML Tag Wrapper](https://marketplace.visualstudio.com/items?itemName=hwencc.html-tag-wrapper)
-
-8. **Prettier - Code formatter**: Code formatter that supports various languages.
-   - [Download Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-
-9. **Tailwind CSS IntelliSense**: Intelligent Tailwind CSS tooling for VSCode.
-   - [Download Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+1. **[Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)**: Automatically rename paired HTML/XML tags.
+2. **[Better Align](https://marketplace.visualstudio.com/items?itemName=wwm.better-align)**: Align code with ease using configurable alignment rules.
+3. **[Bootstrap Intellisense](https://marketplace.visualstudio.com/items?itemName=thekalinga.bootstrap4-vscode)**: Bootstrap 3 and 4 autocomplete, snippets, and intellisense in VSCode.
+4. **[Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)**: Spell checker for source code.
+5. **[ES7+ React/Redux snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)**: JavaScript and React/Redux snippets in ES7+ syntax.
+6. **[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)**: Provides linting for JavaScript and TypeScript code.
+7. **[HTML Tag Wrapper](https://marketplace.visualstudio.com/items?itemName=hwencc.html-tag-wrapper)**: Wrap selections with HTML tags.
+8. **[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)**: Code formatter that supports various languages.
+9. **[Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)**: Intelligent Tailwind CSS tooling for VSCode.
 
 ### Extra VSCode Plugins
 Enhance your coding experience with these additional VSCode plugins:
-
-1. **Better Comments**: Improve your code commenting with customizable comment tags.
-   - [Download Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
-
-2. **Color Highlight**: Highlight colors in your code.
-   - [Download Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
-
-3. **Indent Rainbow**: Colorizes indentation in front of your text alternating four different colors on each step.
-   - [Download Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
-
-Feel free to explore these plugins to enhance your productivity and customize your VSCode experience!
-
-
+1. **[Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)**: Improve your code commenting with customizable comment tags.
+2. **[Download Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)**: Highlight colors in your code.
+3. **[Download Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)**: Colorizes indentation in front of your text alternating four different colors on each step.
