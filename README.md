@@ -1,422 +1,233 @@
-# MERN Project Guide
+## 📁 Table of Contents
 
-Welcome to the project! This repository contains a Vite-based web application with separate server, admin and website interfaces.
+- [Introduction](#introduction)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Development](#development)
+- [Naming Conventions](#naming-conventions)
+- [Folder & File Organization](#folder--file-organization)
+- [Code Quality Tips](#code-quality-tips)
+- [Ignored Folders](#ignored-folders)
+- [License](#license)
 
-## Table of Contents
+---
 
--  [Introduction](#introduction)
--  [Project Structure](#project-structure)
--  [Installation](#installation)
--  [Development](#development)
--  [Ignored Folders](#ignored-folders)
--  [Contributing](#contributing)
--  [License](#license)
+## 🧭 Introduction
 
-## Introduction
+This project leverages the MERN stack (MongoDB, Express.js, React.js, Node.js) and follows modular best practices. It is divided into multiple workspaces for scalability and better organization.
 
-This project is built on the latest Vite and Node.js versions. Each Part of the project runs on a different port.
+---
 
-## Project Structure
+## 🗂️ Project Structure
 
-The repository is organised into the following directories:
+```
+/admin     → Admin dashboard (React + Vite)
+/website   → Public-facing website (React + Vite)
+/server    → Backend API (Node.js + Express)
+/shared    → Common utilities and types shared across the app
+````
 
--  `admin`: Contains the admin interface of the application.
--  `website`: Contains the website interface of the application.
--  `server`: Contains the server code.
--  `shared`: Contains the shared resources between the admin, website, and server.
+---
 
-## Installation
+## 🛠️ Installation
 
+Follow these steps to set up the project locally:
 
+### 1. Clone the Repository
 
-## Development
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
 
+### 2. Install Dependencies
 
+Navigate into each workspace and install dependencies:
 
-   You will need to install a sample database to run the project. Visit the link below to run migrations, make sure you have already set up MongoDB credentials
+```bash
+# Admin Panel
+cd admin
+npm install
 
-   ```sh
-   http://localhost:5010/v1/migrations/install-all
-   ```
+# Website
+cd ../website
+npm install
 
-## Ignored Folders
+# Server
+cd ../server
+npm install
+```
 
-The following folders are intentionally excluded from version control using the `.gitignore` file:
+### 3. Set Up Environment Variables
 
--  `/node_modules`: Ignored to prevent tracking of dependencies.
--  `/admin/public/assets/`: Ignored to exclude admin frontend assets.
--  `/website/public/assets/`: Ignored to exclude website frontend assets.
--  `/backend/assets/`: Ignored to exclude backend assets.
+Copy the `.env.example` files and configure as needed:
 
-These folders should be managed externally or shared with team members as needed.
+```bash
+cp admin/.env.example admin/.env
+cp website/.env.example website/.env
+cp server/.env.example server/.env
+```
 
-# Development Guide 🚀
+> 🔒 Don't forget to add your keys and environment-specific values in each `.env` file.
 
-## Naming Conventions
+### 4. Run the Application
 
-### Variables and Functions
-- Use **meaningful** and **descriptive** names.	  
-- Follow **camelCase** or **snake_case** for naming variables and functions.
-- Avoid single-letter names unless used as loop counters.
+In separate terminal windows or tabs:
 
-	```javascript  
-	// Bad example
-	let x = "JohnDoe";
-	function calc(price, q) {
-		return price * q;
-		...
-		
-	// Good example
-	let userName = "JohnDoe";
-	function calculateTotalPrice(itemPrice, quantity) {
-		return itemPrice * quantity;
-		...
-	```
+```bash
+# Admin
+cd admin
+npm run dev
 
-### Classes and Objects
-- Use **PascalCase** for class names and function only if they render any view.
-- Use **camelCase** for class names and function if they do not render any view.
-- Class names should be **nouns** representing the entity they model.
+# Website
+cd ../website
+npm run dev
 
-	```javascript
-	// Example of function following the guideline
-	function calculateTotalPrice(itemPrice, quantity) {
-		return itemPrice * quantity;
-	}
+# Server
+cd ../server
+npm run dev
+```
 
-	// Example of function following the guideline
-	function displayUserProfile(userName) {
-		// Logic to display user profile
-	}
-	```
+---
 
-	```javascript
-	// Example of class with PascalCase
-	class Car {
-		constructor(make, model) {
-			this.make = make;
-			this.model = model;
-		}
+## 🚧 Development
 
-		drive() {
-			console.log(`Driving ${this.make} ${this.model}`);
-		}
-	}
-	```
-	
-	```javascript
-	// Example of class with camelCase
-	class animalShelter {
-		constructor() {
-			this.animals = [];
-		}
+To run the development servers:
 
-		addAnimal(animal) {
-			this.animals.push(animal);
-		}
+```bash
+# Admin
+cd admin && npm run dev
 
-		getAnimals() {
-			return this.animals;
-		}
-	}
-	```
-	
-- Function names should start with a **non-continuous verbs** then their will be **nouns** representing the entity they model.
+# Website
+cd website && npm run dev
 
-	```javascript  
-	// Bad example
-	const handleEditModal = () => {
-		setShowAddEditModal(true);
-	};
-	
-	const clickEditModal = () => {
-		setShowAddEditModal(true);
-	};
-	
-	const clickEditbutton = () => {
-		setShowAddEditModal(true);
-	};
-	...
-		
-	// Good example
-	const handleEditButtonClick = () => {
-		setShowAddEditModal(true);
-	};
-	...
-	```
-	
+# Server
+cd server && npm run dev
+```
+
+---
+
+## 📌 Naming Conventions
+
+### Variables & Functions
+
+* Use **camelCase** or **snake\_case**
+* Use meaningful names; avoid single letters
+* Functions should be named with **verb + noun**, e.g., `handleFormSubmit`
+
+```js
+// Good
+let userName = "JohnDoe";
+function calculateTotal(price, qty) {
+  return price * qty;
+}
+```
 
 ### Constants
-- Use **SCREAMING_SNAKE_CASE** for constants.
-- Constants should be all uppercase with words separated by underscores.
 
-	```javascript
-	const MAX_SPEED = 120;
-	const API_KEY = "YOUR_API_KEY";
-	const PI = 3.14;
-	```
+* Use **SCREAMING\_SNAKE\_CASE**
 
-Enhance your coding experience further with these additional tips:
+```js
+const MAX_RETRY_COUNT = 5;
+```
 
-### Grammar Mistakes and Code Spell Checker
+---
 
-Ensure your code is free of spelling errors and follows proper grammar rules by utilizing a code spell checker plugin. This plugin will highlight spelling mistakes and suggest corrections. Additionally, consider converting words highlighted by the spell checker to camelCase to maintain consistent naming conventions.
-
-For example, if a word is underlined in blue by the code spell checker indicating a spelling mistake, you can convert it to camelCase by modifying it accordingly:
-
-	```javascript
-	// Incorrect spelling highlighted by code spell checker
-	let userwage = 200;
-
-	// Corrected to camelCase
-	let userWage = 200;
-	```
-
-## Folder Structure And File Organization
+## 🗃️ Folder & File Organization
 
 ### Folder Structure
-- Organize files logically based on functionality.
-- Use folders to group related files.
-- Consider using a modular structure with directories like `components/`, `pages/`, `utils/`, etc.
-- Always try to make the main file like a **Blogs.jsx** file in root folder and if  this blogs file has components then create the folder with same name using **camelCase** in the and place blogs partial files there
+
+* Group by **feature** or **functionality**
+* Example directories: `components/`, `pages/`, `utils/`, `middlewares/`, `store/`, etc.
+* For multi-part components, use a **camelCase folder** matching the main file name:
+
+  ```
+  📁 blogs
+    └─ 📄 Blogs.jsx
+    └─ 📁 blogs/
+        └─ 📄 BlogCard.jsx
+  ```
 
 ### File Naming
-- When a page displays multiple records, the filename should be plural. For pages displaying a single entity or detail, use a singular filename.
-- Use descriptive filenames that reflect the content or purpose of the file.
-- Follow a consistent naming convention across the project.
 
-## Simplification Techniques
+* Use **plural** for list views (e.g., `Users.jsx`)
+* Use **singular** for individual records (e.g., `User.jsx`)
+* Be descriptive and consistent
+
+---
+
+## 🚫 Ignored Folders
+
+These folders are excluded via `.gitignore`:
+
+* `/node_modules`
+* `/admin/public/assets/`
+* `/website/public/assets/`
+* `/server/assets/`
+
+---
+
+## 📂 Example Directory Snapshot
+
+Here’s a condensed view of the directory layout:
+
+```
+📁 admin
+ └─ 📁 public/assets
+ └─ 📁 src
+     ├─ 📁 actions
+     ├─ 📁 assets
+     ├─ 📁 middlewares
+     ├─ 📁 store (context/hooks/redux)
+     ├─ 📁 styles
+     ├─ 📁 utils
+     ├─ 📁 views (components/partials)
+     └─ 📄 App.jsx, main.jsx
+
+📁 server
+ └─ 📁 assets (media/encryptionKeys)
+ └─ 📁 controllers
+ └─ 📁 middlewares (auth/storage/cache)
+ └─ 📁 models
+ └─ 📁 routes
+ └─ 📁 utils (crons/emailTemplates/helpers)
+ └─ 📄 index.js
+
+📁 website (same structure as admin)
+
+📁 shared
+ └─ Common types/utilities
+```
+
+---
+
+## ✨ Code Quality Tips
 
 ### Modularization
-- Break down complex tasks into smaller, reusable modules or functions.
-- Encapsulate related functionality within modules or classes.
-- Do not to break a single file into chunks if not that long and modules are not reusable
+
+* Keep files small and focused
+* Reuse components and utilities
 
 ### Abstraction
-- Abstract away unnecessary details to simplify code.
-- Use higher-level abstractions when dealing with complex operations.
-- Create a minimum number of files, do not create cluster chunks
+
+* Avoid unnecessary file splitting unless reusable
+* Don't over-engineer simple components
 
 ### Code Reuse
-- Identify common patterns and extract them into reusable functions or components.
-- Avoid duplicating code; refactor repetitive code into shared functions.
+
+* Extract repetitive code into functions or shared modules
 
 ### Documentation
-- Write **clear** and **concise** comments to explain complex logic or algorithms.
-- Document the purpose and usage of functions, classes, and modules.
+
+* Use comments for complex logic
+* Keep them relevant and up to date
 
 ### Refactoring
-- Regularly review and refactor code to improve readability and maintainability.
-- Simplify complex code by breaking it down into smaller, more manageable parts.
 
+* Clean and refactor code regularly
+* Focus on readability and simplicity
 
-*By following consistent naming conventions, organizing files effectively, and employing simplification techniques, you can create codebases that are easier to understand, maintain, and extend.*
-
-
-## Example Folder Structure For A Full Stack App
-
-- **admin**: Contains the front-end code using React.js.
-  - **public**: Stores static assets and libraries to use the local CDN.
-  - **src**: Contains React components, pages, and other front-end code.
-- **website**: Contains the front-end code using React.js.
-  - **public**: Stores static assets and libraries to use the local CDN.
-  - **src**: Contains React components, pages, and other front-end code.
-- **server**: Contains the back-end code using Node.js and Express.js.
-  - **assets**: Holds assets and other encryption files.
-  - **controllers**: Contains controller functions.
-  - **models**: Defines data models.
-  - **routes**: Defines API routes.
-- **.gitignore**: Specifies files and directories to be ignored by Git.
-- **README.md**: Detailed explanation about project setup, configs, and use.
-
-This README outlines the structure of a typical MERN (MongoDB, Express.js, React.js, Node.js) stack application.
-```
-- 📁 .vscode
-	- 📄 settings.json
-	...
-- 📁 admin
-  - 📁 public
-	- 📁 assets
-	...
-  - 📁 src
-	  - 📁 actions
-		- 📄 apiErrorHandler.js
-		...
-	  - 📁 assets
-		...
-	  - 📁 middlewares
-		- 📄 apis.js
-		- 📄 auth.js
-		- 📄 axiosHandler.js
-		...
-	  - 📁 store
-		- 📁 contextProviders
-			...
-		- 📁 hooks
-			...
-		- 📁 redux
-			...
-		...
-	  - 📁 styles
-		- 📁 cards
-			...
-		- 📁 modals
-			...
-		- 📁 icons
-			...
-		...
-	  - 📁 utils
-		- 📁 validations
-			-  📄 regexValidations.js
-			...
-		- 📄 constants.js
-		- 📄 helpers.js
-		...
-	  - 📁 views
-		- 📁 components
-			- 📁 home
-				-  📄 FeaturedProducts.jsx
-		- 📁 partials
-			-  📄 Header.jsx
-			-  📄 Breadcrumb.jsx
-			-  📄 Footer.jsx
-			...
-		- 📄 Home.jsx
-		- 📄 Auth.jsx
-		...
-    - 📄 App.jsx
-    - 📄 main.jsx
-    ...
-  - 📄 .env
-  - 📄 .env.example
-  - 📄 .env.production
-  - 📄 eslintrc.cjs
-  - 📄 index.html
-  - 📄 package.json
-  - 📄 vite.config.js
-  ...
-- 📁 server
-  - 📁 assets
-	- 📁 encrytionKeys
-		...
-	- 📁 media
-		...
-    ...
-  - 📁 controllers
-    - 📄 guests.js
-    - 📄 users.js
-    ...
-  - 📁 middlewares
-	- 📁 authentications
-		- 📄 jwtAuthentication.js
-		- 📄 userAuthorization.js
-		- 📄 userAccessStatus.js
-		...
-	- 📁 cache
-		- 📄 redis.js
-	- 📁 storage
-		- 📄 multer.js
-		...
-	- 📄 socket.js
-    ...
-  - 📁 models
-    - 📄 users.js
-    ...
-  - 📁 routes
-    - 📄 users.js
-    - 📄 authRoutes.js
-    ...
-  - 📁 utils
-	- 📁 crons
-		- 📁 scripts
-			- 📄 checkForExpiredSubscriptions.sh
-			...
-		- 📄 checkForExpiredSubscriptions.js
-		...
-	- 📁 emailTemplates
-		- 📄 welcomeEmail.html
-		...
-	- 📁 sampleDBMigrations
-		- 📄 users.json
-		...
-	- 📄 constants.js
-	- 📄 helpers.js
-    ...
-  - 📄 .env
-  - 📄 .env.example
-  - 📄 .eslintrc.js
-  - 📄 .eslintrc.prettier.js
-  - 📄 .ecosystem.config.js
-  - 📄 index.js
-  - 📄 package.json
-  ...
-- 📁 admin
-  - 📁 public
-	- 📁 assets
-	...
-  - 📁 src
-	  - 📁 actions
-		- 📄 apiErrorHandler.js
-		...
-	  - 📁 assets
-		...
-	  - 📁 middlewares
-		- 📄 apis.js
-		- 📄 auth.js
-		- 📄 axiosHandler.js
-		...
-	  - 📁 store
-		- 📁 contextProviders
-			...
-		- 📁 hooks
-			...
-		- 📁 redux
-			...
-		...
-	  - 📁 styles
-		- 📁 cards
-			...
-		- 📁 modals
-			...
-		- 📁 icons
-			...
-		...
-	  - 📁 utils
-		- 📁 validations
-			-  📄 regexValidations.js
-			...
-		- 📄 constants.js
-		- 📄 helpers.js
-		...
-	  - 📁 views
-		- 📁 components
-			- 📁 home
-				-  📄 FeaturedProducts.jsx
-		- 📁 partials
-			-  📄 Header.jsx
-			-  📄 Breadcrumb.jsx
-			-  📄 Footer.jsx
-			...
-		- 📄 Home.jsx
-		- 📄 Auth.jsx
-		...
-    - 📄 App.jsx
-    - 📄 main.jsx
-    ...
-  - 📄 .env
-  - 📄 .env.example
-  - 📄 .env.production
-  - 📄 eslintrc.cjs
-  - 📄 index.html
-  - 📄 package.json
-  - 📄 vite.config.js
-  ...
-- 📄 .gitignore
-- 📄 .LICENSE
-- 📄 README.md
-```
-
-This structure is a common setup for MERN stack applications, but it can be customised based on the specific requirements of your project. Can be modified as needed!
+---
 
 # Commit Message Format
 
