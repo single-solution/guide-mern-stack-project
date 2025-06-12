@@ -126,11 +126,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# Ignore specific file types within public/assets and backend/assets and node_modules
+# Ignore specific file types within public/assets and server/assets, and node_modules
 **/node_modules
 **/public/assets/**/*[.jpg,.jpeg,.png,.gif,.bmp,.svg,.ico,.webp,.mp4,.avi,.mov,.mkv,.wmv,.flv,.webm,.key]
 server/assets/**/*[.jpg,.jpeg,.png,.gif,.bmp,.svg,.ico,.webp,.mp4,.avi,.mov,.mkv,.wmv,.flv,.webm,.key]
 **/*.zip
-
-# Local Netlify folder
-.netlify
